@@ -1,0 +1,13 @@
+<h1>Ye judgement:</h1>
+
+<% if @included %>
+  <% if @english %>
+    <p>Congrats, you get <%= @user_word.split('').count %> points!</p>
+  <% else %>
+    <p>Sorry, a valiant effort indeed, BUT <strong><%= @user_word %></strong> is not an english word!! 👀 </p>
+  <% end %>
+<% else %>
+  <p>Sorry, but <strong><%= @user_word %></strong> cannot be made from the choices of letter you had! 👎</p>
+<% end %>
+
+<%= link_to "Play again?", new_path %>
